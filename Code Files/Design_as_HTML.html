@@ -1,0 +1,111 @@
+<!doctype html><html lang='en-US'>
+  <head>
+    <meta charset='UTF-8' />
+    <title>HTML Design</title>
+    <style>
+	#Radiobutton0{cursor: move; left: 1132px; top: 524px; position: absolute; height: 15px; width: 15px}
+	#Radiobutton1{cursor: move; left: 1157px; top: 552px; position: absolute; height: 15px; width: 15px}
+	#Button2{cursor: move; left: 655.6265625px; top: 622.05px; position: absolute; height: 32px; width: 153px}
+	#Textarea3{cursor: move; left: 528.34375px; top: 392.7px; position: absolute; height: 52px; width: 120px}
+	#Dropdown4{cursor: move; left: 530.7453125px; top: 305.25px; position: absolute; height: 19px; width: 153px}
+	#Textinput5{cursor: move; left: 501.9265625px; top: 224.4px; position: absolute; height: 24px; width: 164px}
+	#Textinput6{cursor: move; left: 521.1390625px; top: 143.55px; position: absolute; height: 22px; width: 165px}
+	#Imageicon7{cursor: move; left: 192.125px; top: 23.1px; position: absolute; height: 35px; width: 78px}
+	#text0{cursor: move; left: 508.1815235008104px; top: 44.346651660101294px; position: absolute; font-size:18px}
+	#text1{cursor: move; left: 238.52147487844408px; top: 131.70287000562746px; position: absolute; font-size:18px}
+	#text2{cursor: move; left: 255.9590761750405px; top: 213.04220596510973px; position: absolute; font-size:18px}
+	#text3{cursor: move; left: 275.2649918962723px; top: 287.9189645469893px; position: absolute; font-size:18px}
+	#text4{cursor: move; left: 874.993922204214px; top: 314.88351153629714px; position: absolute; font-size:18px}
+	#text5{cursor: move; left: 263.43233387358185px; top: 374.60664040517725px; position: absolute; font-size:18px}
+	#text6{cursor: move; left: 130.78200972447326px; top: 518.1204276871131px; position: absolute; font-size:18px}
+	#text7{cursor: move; left: 1147.145056726094px; top: 519.0118176702307px; position: absolute; font-size:18px}
+	#text8{cursor: move; left: 1172.0559157212317px; top: 547.5362971299944px; position: absolute; font-size:18px}
+
+    </style>
+    <script type='text/javascript'>
+    function dragElement(element) {
+    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    document.getElementById(element.id).onmousedown = dragMouseDown;
+
+    function dragMouseDown(e) {
+        e = e || window.event;
+        e.preventDefault();
+        // get the mouse cursor position at startup:
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        document.onmouseup = closeDragElement;
+        // call a function whenever the cursor moves:
+        document.onmousemove = elementDrag;
+    }
+
+    function elementDrag(e) {
+        e = e || window.event;
+        e.preventDefault();
+        // calculate the new cursor position:
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        // set the element's new position:
+        element.style.top = (element.offsetTop - pos2) + "px";
+        element.style.left = (element.offsetLeft - pos1) + "px";
+    }
+
+    function closeDragElement() {
+        /* stop moving when mouse button is released:*/
+        document.onmouseup = null;
+        document.onmousemove = null;
+    }
+    
+    };
+    
+    $(document).ready(function() {
+        $(function dragLabels(val) { $(val).draggable();}); 
+    });
+
+    
+    </script>
+  </head>
+  <body>
+    <input id='Radiobutton0' name='group' type='radio' value='' />
+    <input id='Radiobutton1' name='group' type='radio' value='' />
+    <button id='Button2'>Submit</button>
+    <textarea id='Textarea3'></textarea>
+    <select id='Dropdown4' name='Dropdown'>
+      <option value='Option 1'>Option 1</option>
+      <option value='Option 2'>Option 2</option>
+      <option value='Option 3'>Option 3</option>
+    </select>
+    <input id='Textinput5' type='text' />
+    <input id='Textinput6' type='text' />
+    <img id='Imageicon7' src='C:/Users/farah/Desktop/College/4th year/ALL IN 1/Pics/icon.JPG' alt='image' />
+    <label id='text0'>Website Generator</label>
+    <label id='text1'>Name</label>
+    <label id='text2'>Age</label>
+    <label id='text3'>Major</label>
+    <label id='text4'></label>
+    <label id='text5'>Review</label>
+    <label id='text6'>Do you Like the idea?</label>
+    <label id='text7'> yes</label>
+    <label id='text8'> No</label>
+    <script>
+      dragElement(document.getElementById('Radiobutton0'))
+      dragElement(document.getElementById('Radiobutton1'))
+      dragElement(document.getElementById('Button2'))
+      dragElement(document.getElementById('Textarea3'))
+      dragElement(document.getElementById('Dropdown4'))
+      dragElement(document.getElementById('Textinput5'))
+      dragElement(document.getElementById('Textinput6'))
+      dragElement(document.getElementById('Imageicon7'))
+      dragElement(document.getElementById('text0'))
+      dragElement(document.getElementById('text1'))
+      dragElement(document.getElementById('text2'))
+      dragElement(document.getElementById('text3'))
+      dragElement(document.getElementById('text4'))
+      dragElement(document.getElementById('text5'))
+      dragElement(document.getElementById('text6'))
+      dragElement(document.getElementById('text7'))
+      dragElement(document.getElementById('text8'))
+    </script>
+  </body>
+</html>
